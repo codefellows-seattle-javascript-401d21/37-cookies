@@ -1,12 +1,27 @@
 {
   "name": "front-end-authorization",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "jest --verbose"
+    "build": "webpack",
+    "watch": "webpack-dev-server --inline --hot",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
-  "author": "Koko",
-  "license": "ISC",
+  "jest": {
+    "globals": {
+      "__DEBUG__": false,
+      "process.env": {
+        "NODE_ENV": "testing"
+      }
+    },
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage"
+  },
+  "keywords": [],
+  "author": "Koko Kassa",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -18,6 +33,7 @@
     "dotenv": "^5.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.9",
     "html-webpack-plugin": "^2.30.1",
@@ -36,5 +52,14 @@
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kowserk7/37-cookies.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kowserk7/37-cookies/issues"
+  },
+  "homepage": "https://github.com/kowserk7/37-cookies#readme",
   "description": ""
 }
