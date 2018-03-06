@@ -1,6 +1,6 @@
 import React from 'react'
-import Content from './content'
-import Landing from './landing'
+import Content from './content/content'
+import Landing from './landing/landing'
 import {Provider} from 'react-redux'
 import createStore from '../lib/app-create-store'
 import {BrowserRouter, Route, Redirect} from 'react-router-dom'

@@ -1,5 +1,5 @@
 import React from 'react'
-import {renderIf} from '../../../lib/utils'
+import {renderIf} from '../../lib/utils'
 
 export default class AuthForm extends React.Component {
   constructor(props) {
