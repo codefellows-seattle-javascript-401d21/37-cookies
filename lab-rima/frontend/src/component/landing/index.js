@@ -9,7 +9,7 @@ class Landing extends React.Component{
     let {params} = this.props.match;
     let onComplete = params.auth === 'signin'
       ? this.props.signin
-      : this.props.signup
+      : this.props.signup;
 
     return (
       <div className="landing-container">
@@ -17,7 +17,7 @@ class Landing extends React.Component{
           auth={params.auth}
           onComplete={onComplete}/>
       </div>
-    )
+    );
   }
 }
 

@@ -13,7 +13,7 @@ export default class AuthForm extends React.Component{
       emailError: null,
       passwordError: null,
       error: null,
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +39,7 @@ export default class AuthForm extends React.Component{
 
   render(){
     if(localStorage.token){
-      window.location = "/content";
+      window.location = '/content';
     }
     return (
       <form
@@ -81,6 +81,6 @@ export default class AuthForm extends React.Component{
           {this.props.auth}
         </button>
       </form>
-    )
+    );
   }
 }

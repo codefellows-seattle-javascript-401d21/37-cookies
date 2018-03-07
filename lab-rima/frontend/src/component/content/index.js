@@ -6,6 +6,6 @@ export default class Content extends React.Component {
       <div>
         <h1>You are logged in!</h1>
       </div>
-    )
+    );
   }
 }
