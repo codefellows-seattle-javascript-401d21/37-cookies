@@ -4,7 +4,7 @@ import reporter from './redux-reporter';
 import {createStore, applyMiddleware} from 'redux';
 
 let appStoreCreate = () => {
-  createStore(reducer, appluMiddleware(thunk, reporter));
+  return createStore(reducer, applyMiddleware(thunk, reporter));
 }
 
 export default appStoreCreate;

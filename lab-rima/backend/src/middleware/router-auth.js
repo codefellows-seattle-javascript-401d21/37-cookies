@@ -11,7 +11,7 @@ export default new Router()
   log('__ROUTE__ POST /signup')
 
   new User.create(req.body)
-  .then(user => user.tokenCreate())
+  .then(user => {console.log('user: ', user);user.tokenCreate()})
   .then(token => {
     res.cookie('X-Sluggram-Token', token, {maxAge: 900000})
     res.cookie('snark-in-the-dark', 'hahahah', {maxAge: 900000})

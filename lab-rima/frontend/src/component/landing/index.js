@@ -1,11 +1,11 @@
-import React form 'react';
-import {connect} form 'react-redux';
-import AuthForm form '../auth/auth-form';
-import {signupRequest, signinRequest} form '../../action/auth-actions';
+import React from 'react';
+import {connect} from 'react-redux';
+import AuthForm from '../auth/auth-form';
+import {signupRequest, signinRequest} from '../../action/auth-actions';
 
 class Landing extends React.Component{
   render(){
-    console.log('__LANDING_PROPS__', this.props):
+    console.log('__LANDING_PROPS__', this.props);
     let {params} = this.props.match;
     let onComplete = params.auth === 'signin'
       ? this.props.signin
