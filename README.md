@@ -11,8 +11,8 @@
 
 
 ## Requirements
-#### back-end setup
-* copy the back-end lecture demo from today for your API, and enable your linter.
+#### backend setup
+* copy the backend lecture demo from today for your API, and enable your linter.
 
 #### Configuration
 ##### frontend/
@@ -24,7 +24,7 @@
 * **yarn.lock** -- with the yarn lockfile
 * **package.json** -- with all dependencies and dev-dependencies
 * **webpack.config.js** -- with webpack config
-* **src/** -- containing the front end code
+* **src/** -- containing the frontend code
 * **src/main.js** -- renders the app
 * **src/style** -- containing your sass
 * **src/style/main.scss** -- for importing and including reset and base
@@ -37,7 +37,7 @@
 * Create a frontend that follows react redux best practices
 * Create a landing page that enables a user to signup or signin
 * Redirect the user to the dashboard page on signup or signin
-* Store the users token in a cookie or `localstorage` on signin
+* Store the users token in a cookie or `localStorage` on signin
 
 #### Test
 * Test your redux reducers
