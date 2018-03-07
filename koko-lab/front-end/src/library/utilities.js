@@ -1,7 +1,7 @@
-export const log = (...arguments) => __DEBUG__ ? console.log(...arguments) : undefined;
-export const logError = (...arguments) => __DEBUG__ ? console.log(...arguments) : undefined;
+export const log = (...args) => __DEBUG__ ? console.log(...args) : undefined;
+export const logError = (...args) => __DEBUG__ ? console.log(...args) : undefined;
 export const renderIf = (test, component) => test ? component : undefined;
 export const classToggler = options => Object.keys(options).filter(key => !!options[key]).join(' ');
-export const map = (child, ...arguments) => Array.prototype.map(child, arguments);
-export const filter = (child, ...arguments) => Array.prototype.filter.apply(child, arguments);
-export const reduce = (child, ...arguments) => Array.prototype.reduce.apply(child, arguments);
+export const map = (child, ...args) => Array.prototype.map(child, args);
+export const filter = (child, ...args) => Array.prototype.filter.apply(child, args);
+export const reduce = (child, ...args) => Array.prototype.reduce.apply(child, args);

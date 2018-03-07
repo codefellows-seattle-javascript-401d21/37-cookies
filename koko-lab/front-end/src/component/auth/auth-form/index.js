@@ -1,4 +1,5 @@
 import React from 'react';
+import { renderIf } from '../../../library/utilities'
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -19,9 +20,9 @@ export default class AuthForm extends React.Component {
     let {name, value} = event.target;
     this.setState({
       name: value,
-      usernameError: name === 'username' && !value ? 'Username required' : null,
+      usernameError: name === 'username' && !value.trim() ? 'Username required' : null,
       emailError: name === 'email' && !value.trim() ? 'Email required' : null,
-      passwordError name === 'password' && !value.trim() ? 'Password required' : null,
+      passwordError: name === 'password' && !value.trim() ? 'Password required' : null,
     })
   }
   handleSubmit(event){
@@ -32,7 +33,37 @@ export default class AuthForm extends React.Component {
       .catch(error => this.setState({error}))
   }
   render() { 
-    return (  )
+    return ( 
+      <form 
+        className="auth-form"
+        onSubmit={this.handleSubmit}
+        noValidate>
+        <input 
+          type="text"
+          name="usernane"
+          placeholder="janedoe1994"
+          pattern=""
+          value={this.state.username}
+          onChange={this.handleChange}/>
+          {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
+          {renderIf(this.props.auth === 'signup',
+          <input 
+          type="email"
+          name="email"
+          placeholder="jane.smith@example.com"
+          value={this.state.email}
+          onChange={this.handleChange}/>
+        )}
+          <input 
+          type="password"
+          name="password"
+          placeholder="janedoeisawesome"
+          value={this.state.password}
+          onChange={this.handleChange}/>
+
+          <button type="submit">{this.props.auth}</button>
+        </form>
+     )
   }
 }
  

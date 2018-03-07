@@ -23,8 +23,8 @@ class Landing extends React.Component {
 
 let mapStateToProps  = () => ({});
 let mapDispacthToProps = dispatch => ({
-  signup: user => dispatch(signupRequest(user),
-  signin: user => dispatch(signinRequest)(user),
+  signup: user => dispatch(signupRequest(user)),
+  signin: user => dispatch(signinRequest(user))
 });
  
 export default connect (mapStateToProps, mapDispacthToProps)(Landing);
