@@ -40,4 +40,9 @@ MONGO_URI=mongodb://localhost/testdb
 
 ## Change Log
 ```
+2018-03-06 Committing the cfgram backend to be used with our front-end
+2018-03-06 Got the frontend code working with the backend
+2018-03-06 Fixed .env and .dev.env files
+2018-03-06 Added a missing package and fixed some bugs
+2018-03-06 Added a null payload to the DELETE_TOKEN action
 ```
