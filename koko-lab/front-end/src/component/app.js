@@ -1,9 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
-import createStore from '../library/app-create-store'
-import Landing from './landing/landing'
-import Content from './content/content'
+import createStore from '../library/app-create-store';
+import Landing from './landing/landing';
+import Dashboard from './dashboard/dashboard';
 const store = createStore();
 
 export default class App extends React.Component {
@@ -14,15 +14,15 @@ export default class App extends React.Component {
           <BrowserRouter>
             <React.Fragment>
               <Route exact path="/welcome/:auth" component={Landing} />
-              <Route exact path="/content" component={() =>
-              token
-              ? <Content token={token}/>
-              : <Redirect to="/welcome/signup"/>
+              <Route exact path="/dashboard" component={() =>
+                token
+                  ? <Content token={token}/>
+                  : <Redirect to="/welcome/signup"/>
               }/>
             </React.Fragment>
           </BrowserRouter>
         </Provider>
       </main>
-     )
+    );
   }
 }

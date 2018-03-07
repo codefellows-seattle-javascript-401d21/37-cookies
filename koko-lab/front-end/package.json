@@ -6,7 +6,9 @@
     "build": "webpack",
     "watch": "webpack-dev-server --inline --hot",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "start-db": "mkdir -p ./data/db && mongod --dbpath ./data/db",
+    "stop-db": "killall mongod"
   },
   "jest": {
     "globals": {
@@ -52,7 +54,9 @@
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "eslint-plugin-react": "^7.7.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kowserk7/37-cookies.git"
