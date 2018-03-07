@@ -1,3 +1,3 @@
-import {tokenSet, tokendelete, signInRequest, signUpRequest} from './sign-actions';
+import {tokenSet, tokenDelete, signInRequest, signUpRequest} from './sign-actions';
 
-export default {tokenSet, tokendelete, signInRequest, signUpRequest};
+export {tokenSet, tokenDelete, signInRequest, signUpRequest};

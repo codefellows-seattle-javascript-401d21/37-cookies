@@ -7,23 +7,24 @@ const tokenSet = token => {
   };
 };
 
-const tokendelete = () => {
+const tokenDelete = () => {
   return {
     type: 'TOKEN_DELETE',
   };
 };
 
 const signUpRequest = user => dispatch => {
-  superagent.post(`${__API_URL__}/signup`)
+  return superagent.post(`${__API_URL__}/signup`)
     .send(user)
-    .then(res => dispatch(tokenSet(res.text)));
+    .then(res => dispatch(tokenSet(res.text)))
+    .then(action =>  action.payload);
 
 };
 
 const signInRequest = user => dispatch => {
-  superagent.get(`${__API_URL__}/login`)
-    .auth(user.name, user.password)
+  return  superagent.get(`${__API_URL__}/login`)
+    .auth(user.username, user.password)
     .then(res => dispatch(tokenSet(res.text)));
 };
 
-export default {tokenSet, tokendelete, signInRequest, signUpRequest};
+export  {tokenSet, tokenDelete, signInRequest, signUpRequest};
