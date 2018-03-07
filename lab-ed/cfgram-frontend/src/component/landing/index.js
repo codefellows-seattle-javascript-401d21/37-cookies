@@ -14,6 +14,7 @@ class Landing extends React.Component {
 
     return (
       <div className="landing-container">
+      <h1>Sign In</h1>
         <AuthForm
           auth={params.auth}
           onComplete={onComplete}/>
