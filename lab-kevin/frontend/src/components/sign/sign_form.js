@@ -1,4 +1,6 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
+
 export default class SignForm extends React.Component{
   constructor(props){
     super(props);
@@ -36,38 +38,46 @@ export default class SignForm extends React.Component{
     e.preventDefault();
     let {username, email, password} = this.state;
     this.props.onComplete({username, email, password})
-      .then(() => this.setState({username, email, password}))
+      .then(token => {
+        Object.keys(this.state).forEach(prop => this.setState({[prop]: ''}));
+        if(!token) return;
+        localStorage.token = token.toString();
+        return this.setState({token: true}); 
+      })
       .catch(err => this.setState({err}));
   }
 
   render(){
     return (
-      
-      <form onSubmit={this.handleSubmit} noValidate>
 
-        <input name="username" 
-          type='text' 
-          value={this.state.username} 
-          placeholder='Name'
-          onChange={this.handleChange}/>
-
-        {this.props.sign === 'signup' ? 
-          <input name="email" 
-            type="email" 
-            value = {this.state.email} 
-            placeholder="Email"
+      <React.Fragment>
+        {this.state.token ? <Redirect to='/' /> : undefined}
+    
+        <form onSubmit={this.handleSubmit} noValidate>
+          <input name="username" 
+            type='text' 
+            value={this.state.username} 
+            placeholder='Name'
             onChange={this.handleChange}/>
-          : undefined}
 
-        <imput name="password" 
-          type="password" 
-          value ={this.state.password} 
-          placeholder="Password" 
-          onChange={this.handleChange}/>
+          {this.props.sign === 'signup' ? 
+            <input name="email" 
+              type="email" 
+              value = {this.state.email} 
+              placeholder="Email"
+              onChange={this.handleChange}/>
+            : undefined}
 
-        <button type="submit">{this.buttonText}</button>
+          <input name="password" 
+            type="password" 
+            value ={this.state.password} 
+            placeholder="Password" 
+            onChange={this.handleChange}/>
 
-      </form>
+          <button type="submit">{this.buttonText()}</button>
+        </form>
+
+      </React.Fragment>
     );
   }
 }

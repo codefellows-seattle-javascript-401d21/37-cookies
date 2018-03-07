@@ -1,14 +1,20 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import {Route, Redirect, Link} from 'react-router-dom';
 import store from '../../lib/store';
 import {Provider} from 'react-redux';
-import Landing from '../landing';
-import Dashboard from '../dashboard';
+import {Landing} from '../landing';
+import {Dashboard} from '../dashboard';
+import {tokenSet} from '../../actions';
 
 export default class App extends React.Component{
   constructor(props){
     super(props);
 
+  }
+
+  onCompnenDidlMount(){
+    console.log('localstorage', localStorage.token);
+    if(localStorage.token) store.dispatch(tokenSet(localStorage.token));
   }
   
   render(){
@@ -18,7 +24,8 @@ export default class App extends React.Component{
         <header>
           <h1>Cheeseburgers in Paradise</h1>
           <nav>
-            <li>Home</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/landing/signin">Sign in</Link></li>
           </nav>
         </header>
         <Provider store={store}>
