@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import {renderIf} from '../../../lib/utils';
 
 export default class AuthForm extends React.Component{
@@ -37,6 +38,9 @@ export default class AuthForm extends React.Component{
   }
 
   render(){
+    if(localStorage.token){
+      window.location = "/content";
+    }
     return (
       <form
         className="auth-form"
