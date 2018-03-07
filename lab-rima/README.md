@@ -22,7 +22,7 @@ In .env for backend
 PORT=3000
 DEBUG=true
 CORS_ORIGINS=http://localhost:8080
-SECRET='Gregor and The Hound'
+SECRET='any string you like'
 MONGO_URI=mongodb://localhost/testdb
 ```
 In .env for frontend
