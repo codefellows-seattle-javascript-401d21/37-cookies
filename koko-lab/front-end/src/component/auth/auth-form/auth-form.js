@@ -13,6 +13,7 @@ export default class AuthForm extends React.Component {
       emailError: null,
       passwordError: null,
       error: null,
+      fireRedirect: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
@@ -30,7 +31,7 @@ export default class AuthForm extends React.Component {
     event.preventDefault();
     let {username, email, password} = this.state;
     this.props.onComplete({ username, email, password })
-      .then(() => this.setState({ username: '', email: '', password: '' }))
+      .then(() => this.setState({ fireRedirect: !this.state.fireRedirect, username: '', email: '', password: '' }))
       .catch(error => this.setState({error}));
   }
 
@@ -72,7 +73,7 @@ export default class AuthForm extends React.Component {
 
           <button type="submit">{this.props.auth}</button>
         </form>
-        {fireRedirect && (<Redirect to='/content' />)}
+        {fireRedirect && (<Redirect to='/dashboard' />)}
       </div>
     );
   }
