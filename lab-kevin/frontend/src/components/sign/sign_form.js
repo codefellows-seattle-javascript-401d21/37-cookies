@@ -1,5 +1,4 @@
 import React from 'react';
-
 export default class SignForm extends React.Component{
   constructor(props){
     super(props);
@@ -42,9 +41,8 @@ export default class SignForm extends React.Component{
   }
 
   render(){
-
     return (
-
+      
       <form onSubmit={this.handleSubmit} noValidate>
 
         <input name="username" 
@@ -67,7 +65,7 @@ export default class SignForm extends React.Component{
           placeholder="Password" 
           onChange={this.handleChange}/>
 
-        <button type="submit">{this.buttonText()}</button>
+        <button type="submit">{this.buttonText}</button>
 
       </form>
     );

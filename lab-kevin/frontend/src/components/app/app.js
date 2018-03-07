@@ -24,7 +24,7 @@ export default class App extends React.Component{
         <Provider store={store}>
           <main>
             <Route exact path="/landing/:sign" component={Landing} />
-            <Route exact path="/dashboard" component={() => 
+            <Route exact path="/" component={() => 
               token ?
                 <Dashboard token={token} />
                 : <Redirect to="/landing/signup" />

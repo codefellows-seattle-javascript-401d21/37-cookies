@@ -7,7 +7,6 @@ const tokenSet = token => {
   };
 };
 
-
 const tokendelete = () => {
   return {
     type: 'TOKEN_DELETE',

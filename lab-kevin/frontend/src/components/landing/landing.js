@@ -9,7 +9,7 @@ class Landing extends React.Component{
   }
 
   render(){
-
+    
     let {params} = this.props.match;
     let onComplete = params.sign === 'signin' ?
       this.props.signin :
@@ -17,6 +17,7 @@ class Landing extends React.Component{
   
     return (
       <section className="landing-container">
+        <h2>Makin&apos; the best of every virtue and vice.</h2>
         <SignForm sign={params.sign}
           onComplete={onComplete}
         />
@@ -26,11 +27,11 @@ class Landing extends React.Component{
   }
 }
 
-const mapSateToProps = () => ({});
+const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
   signin: user => dispatch(signInRequest(user)),
   signup: user => dispatch(signUpRequest(user)),
 });
 
-export default connect(mapSateToProps , mapDispatchToProps)(Landing);
+export default connect(mapStateToProps , mapDispatchToProps)(Landing);
 

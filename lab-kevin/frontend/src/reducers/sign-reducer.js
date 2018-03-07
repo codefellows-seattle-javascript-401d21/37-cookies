@@ -3,7 +3,7 @@ export default (state=null, action) => {
 
   let takeAction = {};
   takeAction['TOKEN_SET'] = () => payload;
-  takeAction['TOKEN_SET'] = () => null;
+  takeAction['TOKEN_DELETE'] = () => null;
 
   return takeAction[type] ? takeAction[type]() : state;
 
