@@ -1,7 +1,9 @@
 ## Signin/Signup
 There are three routes:
 > /welcome/signup to sign up
+
 > /welcome/signin to sign in
+
 > /content -> once you are authenticated, you will be redirected to this page or you can access manually
 
 #### Usage
@@ -9,7 +11,6 @@ There are three routes:
 2. Run
 ```
 npm install
-
 ```
 3. Run
 ```
