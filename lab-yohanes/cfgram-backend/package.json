@@ -9,8 +9,8 @@
     "verbose": true,
     "testEnvironment": "node",
     "setupFiles": [
-      "<rootDir>/src/__test__/lib/test.env.js",
-      "<rootDir>/src/__test__/lib/mock-s3.js"
+      "<rootDir>/source/__test__/lib/test.env.js",
+      "<rootDir>/source/__test__/lib/mock-s3.js"
     ],
     "collectCoverage": true,
     "coverageDirectory": "./coverage",
