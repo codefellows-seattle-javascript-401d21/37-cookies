@@ -11,14 +11,14 @@ export default new Router()
   log('__ROUTE__ POST /signup')
 
   new User.create(req.body)
-  .then(user => return user.tokenCreate())
+  .then(user => {return user.tokenCreate()})
   .then(token => {
     res.cookie('X-Sluggram-Token', token, {maxAge: 900000})
     res.cookie('snark-in-the-dark', 'hahahah', {maxAge: 900000})
 
     res.send(token)
   })
-  .catch(err => return next;)
+  .catch(next)
 })
 .get('/usernames/:username', (req, res, next) => {
   User.findOne({username: username})
