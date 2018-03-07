@@ -5,7 +5,7 @@ export default class Dashboard extends React.Component {
     return (
       <div>
         <h1>Authorization SUCCESS!</h1>
-        <p>{this.props.token}</p>
+        {/* <p>{this.props.token}</p> */}
       </div>
     )
   }

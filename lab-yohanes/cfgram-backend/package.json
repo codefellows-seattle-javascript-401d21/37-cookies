@@ -1,8 +1,11 @@
 {
-  "name": "sluggram",
+  "name": "back-end-authorization",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:slugbyte/sluggram.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/slugbyte/sluggram.git"
+  },
   "author": "Duncan Marsh <dwolfm@gmail.com>",
   "license": "MIT",
   "jest": {
@@ -30,7 +33,9 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watchAll",
     "lint": "eslint .",
-    "lint:test": "npm run lint && npm test"
+    "lint:test": "npm run lint && npm test",
+    "start-db": "mkdir -p ./data/db && mongod --dbpath ./data/db",
+    "stop-db": "killall mongod"
   },
   "devDependencies": {
     "babel-jest": "^22.4.1",
@@ -65,5 +70,10 @@
     "nodemon": "^1.17.1",
     "ramda": "^0.25.0",
     "webpack": "^4.1.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/slugbyte/sluggram/issues"
+  },
+  "homepage": "https://github.com/slugbyte/sluggram#readme",
+  "description": "back-end auth"
 }
