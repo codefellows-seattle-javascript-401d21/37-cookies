@@ -1,5 +1,5 @@
 import createError from 'http-errors'
-import * as util from '../lib/util.js'
+import * as util from '../library/utilities'
 import Mongoose, {Schema} from 'mongoose'
 
 const profileScheama = new Schema({

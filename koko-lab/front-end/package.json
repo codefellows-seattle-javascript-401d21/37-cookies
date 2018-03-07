@@ -6,9 +6,7 @@
     "build": "webpack",
     "watch": "webpack-dev-server --inline --hot",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "start-db": "mkdir -p ./data/db && mongod --dbpath ./data/db",
-    "stop-db": "killall mongod"
+    "test:watch": "jest --watchAll"
   },
   "jest": {
     "globals": {

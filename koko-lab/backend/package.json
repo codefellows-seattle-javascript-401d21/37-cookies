@@ -1,5 +1,5 @@
 {
-  "name": "backend-cfgram",
+  "name": "backend-authorization",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Koko",
@@ -29,7 +29,9 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watchAll",
     "lint": "eslint .",
-    "lint:test": "npm run lint && npm test"
+    "lint:test": "npm run lint && npm test",
+    "start-db": "mkdir -p ./data/db && mongod --dbpath ./data/db",
+    "stop-db": "killall mongod"
   },
   "devDependencies": {
     "babel-jest": "^22.4.1",
@@ -52,6 +54,8 @@
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
+    "eslint": "^4.18.2",
+    "eslint-plugin-react": "^7.7.0",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "fs-extra": "^5.0.0",
@@ -72,5 +76,6 @@
   "bugs": {
     "url": "https://github.com/kowserk7/37-cookies/issues"
   },
-  "homepage": "https://github.com/kowserk7/37-cookies#readme"
+  "homepage": "https://github.com/kowserk7/37-cookies#readme",
+  "description": ""
 }

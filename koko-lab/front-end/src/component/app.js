@@ -16,7 +16,7 @@ export default class App extends React.Component {
               <Route exact path="/welcome/:auth" component={Landing} />
               <Route exact path="/dashboard" component={() =>
                 token
-                  ? <Content token={token}/>
+                  ? <Dashboard token={token}/>
                   : <Redirect to="/welcome/signup"/>
               }/>
             </React.Fragment>
