@@ -14,7 +14,9 @@ class Landing extends React.Component {
     return (
       <div className="landing-container">
         <h2> Welome to CF Instagram</h2>
+        <h4>Please {this.props.match.params.auth === 'signin' ? 'Signin' : 'Signup'}</h4>
         <AuthForm
+          history={this.props.history}
           auth={params.auth}
           onComplete={onComplete}/>
       </div>
