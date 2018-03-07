@@ -1,6 +1,6 @@
-># Lab 26: Cowsay
+># Lab 37: Cookies
 
-Using webpack and react, create a simple html page that displays the value of cowsay generated with a random phrase.  The user has the option of choosing the variant of cowsay fro a drop down.
+Create a frontend that follows react redux best practices with a landing page that enables a user to signup or signin. Redirect the user to the dashboard page on signup or signin and store the users token in a cookie or localstorage on signin.
 
 >## Install
 
