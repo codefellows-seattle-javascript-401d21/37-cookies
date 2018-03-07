@@ -7,6 +7,7 @@ export const tokenSet = token => ({
 
 export const tokenDelete = () => ({
   type: 'TOKEN_DELETE',
+  payload: null,
 });
 
 export const signupRequest = user => dispatch => {
