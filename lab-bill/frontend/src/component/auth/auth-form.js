@@ -1,5 +1,6 @@
 import React from 'react'
 import {renderIf} from '../../lib/utils'
+import {Redirect} from 'react-router-dom'
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ export default class AuthForm extends React.Component {
     let {username, email, password} = this.state
     this.props.onComplete({ username, email, password })
     .then(() => this.setState({ username: '', email: '', password: '' }))
+    // .then(() => <Redirect to="/content" />)
     .catch(error => this.setState({error}))
   }
 
