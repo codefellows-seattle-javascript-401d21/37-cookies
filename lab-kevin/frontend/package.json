@@ -1,7 +1,7 @@
 {
   "name": "lab-kevin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lab 37: Cookies - Create a frontend that follows react redux best practices with a landing page that enables a user to signup or signin. Redirect the user to the dashboard page on signup or signin and store the users token in a cookie or localstorage on signin",
   "main": "webpack.config.js",
   "scripts": {
     "lint": "eslint .",
