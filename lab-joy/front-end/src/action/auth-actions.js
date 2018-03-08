@@ -19,12 +19,18 @@ export const signupRequest = user => dispatch => {
       dispatch(tokenSet(res.text));
       try {
         localStorage.setItem('token', res.text);
+        localStorage.signInError = false;
+        localStorage.signUpError = false;
       } catch (e) {
         console.log(e);
         throw e;
       }
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+      localStorage.signUpError = true;
+      localStorage.signInError = false;
+      console.error(err);
+    });
 };
 
 export const signinRequest = user => dispatch => {
@@ -34,10 +40,16 @@ export const signinRequest = user => dispatch => {
       dispatch(tokenSet(res.text));
       try {
         localStorage.setItem('token', res.text);
+        localStorage.signInError = false;
+        localStorage.signUpError = false;
       } catch (e) {
         console.log(e);
         throw e;
       }
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+      localStorage.signInError = true;
+      localStorage.signUpError = false;
+      console.error(err);
+    });
 };

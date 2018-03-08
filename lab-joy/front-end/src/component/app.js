@@ -27,6 +27,8 @@ export default class App extends React.Component {
         token: store.getState().token,
       });
     });
+    localStorage.signInError = false;
+    localStorage.signUpError = false;
   }
 
   render() {

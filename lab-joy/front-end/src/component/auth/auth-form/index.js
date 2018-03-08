@@ -12,6 +12,8 @@ export default class AuthForm extends React.Component {
       emailError: null,
       passwordError: null,
       error: null,
+      signInError: JSON.parse(localStorage.signInError),
+      signUpError: JSON.parse(localStorage.signUpError),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,6 +36,11 @@ export default class AuthForm extends React.Component {
     this.props.onComplete({ username, email, password })
       .then(() => this.props.redirect('/content'))
       .catch(error => this.setState({ error }));
+
+    this.setState({
+      signInError: JSON.parse(localStorage.signInError),
+      signUpError: JSON.parse(localStorage.signUpError),
+    });
   }
 
   render() {
@@ -46,7 +53,7 @@ export default class AuthForm extends React.Component {
         <input
           type="text"
           name="username"
-          placeholder="johnsmith1985"
+          placeholder="username"
           pattern=""
           value={this.state.username}
           onChange={this.handleChange} />
@@ -55,7 +62,7 @@ export default class AuthForm extends React.Component {
           <input
             type="email"
             name="email"
-            placeholder="john.smith@example.com"
+            placeholder="email"
             value={this.state.email}
             onChange={this.handleChange} />
         )}
@@ -63,16 +70,16 @@ export default class AuthForm extends React.Component {
         <input
           type="password"
           name="password"
-          placeholder="johnsmithrocksthehouse"
+          placeholder="password"
           value={this.state.password}
           onChange={this.handleChange} />
 
         <button type="submit">{this.props.auth}</button>
 
-        <p>
-          {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
-          {renderIf(this.state.passwordError, <span className="tooltip">{this.state.passwordError}</span>)}
-        </p>
+        <p>{renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}</p>
+        <p>{renderIf(this.state.passwordError, <span className="tooltip">{this.state.passwordError}</span>)}</p>
+        <p>{renderIf(this.state.signInError, <span className="tooltip">Invalid password.</span>)}</p>
+        <p>{renderIf(this.state.signUpError, <span className="tooltip">Username is already taken.</span>)}</p>
       </form>
     );
   }
