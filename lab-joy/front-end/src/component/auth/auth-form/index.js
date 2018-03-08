@@ -32,13 +32,11 @@ export default class AuthForm extends React.Component {
     e.preventDefault();
     let { username, email, password } = this.state;
     this.props.onComplete({ username, email, password })
-      // .then(() => this.setState({ username: '', email: '', password: '' }))
       .then(() => this.props.redirect('/content'))
       .catch(error => this.setState({ error }));
   }
 
   render() {
-    console.log('rendered auth-form');
     return (
       <form
         className="auth-form"
@@ -52,7 +50,6 @@ export default class AuthForm extends React.Component {
           pattern=""
           value={this.state.username}
           onChange={this.handleChange} />
-        {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
 
         {renderIf(this.props.auth === 'signup',
           <input
@@ -71,6 +68,11 @@ export default class AuthForm extends React.Component {
           onChange={this.handleChange} />
 
         <button type="submit">{this.props.auth}</button>
+
+        <p>
+          {renderIf(this.state.usernameError, <span className="tooltip">{this.state.usernameError}</span>)}
+          {renderIf(this.state.passwordError, <span className="tooltip">{this.state.passwordError}</span>)}
+        </p>
       </form>
     );
   }

@@ -11,19 +11,22 @@ const store = createStore();
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { token: null };
-
-    store.subscribe(() => {
-      this.setState({
-        token: store.getState().token,
-      });
-      console.log('state changed: ', this.state.token);
-    });
+    this.state = { 
+      token: null,
+    };
   }
 
   componentWillMount() {
     if (localStorage.token)
       store.dispatch({ type: 'TOKEN_SET', payload: localStorage.token });
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState({
+        token: store.getState().token,
+      });
+    });
   }
 
   render() {

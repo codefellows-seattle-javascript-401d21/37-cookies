@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { renderIf } from '../../lib/utils';
@@ -19,7 +19,7 @@ class Navbar extends React.Component {
             {renderIf(this.props.token,
               <React.Fragment>
                 <li><Link to="/content">Content</Link></li>
-                <li onClick={this.props.tokenDelete}><Link to="/welcome/signin">Logout</Link></li>
+                <li onClick={this.props.deleteToken}><Link to="/welcome/signin">Logout</Link></li>
               </React.Fragment>
             )}
           </ul>
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
 
 let mapStateToProps = state => ({});
 let mapDispatchToProps = dispatch => ({
-  tokenDelete: () => dispatch(tokenDelete),
+  deleteToken: () => dispatch(tokenDelete()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
