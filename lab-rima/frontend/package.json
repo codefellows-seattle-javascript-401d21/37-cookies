@@ -17,9 +17,7 @@
         "NODE_ENV": "testing"
       }
     },
-    "verbose": true,
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage"
+    "verbose": true
   },
   "keywords": [],
   "author": "",
