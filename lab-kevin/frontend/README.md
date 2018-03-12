@@ -1,6 +1,6 @@
-># Lab 38: Photo Upload
+># Lab 37: Photo Upload
 
-Create a frontend that follows react redux best practices with a landing page that enables a user to signup or signin. Redirect the user to the dashboard page on signup or signin and store the users token in a cookie or localstorage on signin.  Allow users to upload images and display them in a gallery.
+Create a frontend that follows react redux best practices with a landing page that enables a user to signup or signin. Redirect the user to the dashboard page on signup or signin and store the users token in a cookie or localstorage on signin.
 
 >## Install
 
@@ -73,3 +73,8 @@ Create a frontend that follows react redux best practices with a landing page th
     "test:debug": "DEBUG=http* jest --verbose -i"
   },
 ```
+
+
+### Usuage:
+
+Sign in or sign up.  If you are new to the site, you need to sign up and create an account. Signing up creates a user name and password for signing in to  the site.  Once signed up, all you need to do on return visits is sign in.    
