@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import AuthForm from '../auth/auth-form'
+import AuthForm from '../auth/auth-form/index'
 import {signupRequest, signinRequest} from '../../actions/auth-actions'
 
 class Landing extends React.Component {

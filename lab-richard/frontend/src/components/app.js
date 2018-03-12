@@ -1,7 +1,7 @@
 import React from 'react'
-import Landing from './landing'
-import Navbar from './navbar'
-import Content from './content'
+import Landing from './landing/index'
+import Navbar from './navbar/index'
+import Content from './content/index'
 import {Provider} from 'react-redux'
 import createStore from '../lib/app-create-store'
 import {BrowserRouter, Route, Redirect} from 'react-router-dom'
@@ -16,7 +16,7 @@ export default class App extends React.Component {
 
     render() {
         let {token} = store.getState()
-
+        console.log(token)
         return (
             <main className="application">
                 <Provider store={store}>

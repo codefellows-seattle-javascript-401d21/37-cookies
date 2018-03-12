@@ -16,7 +16,7 @@ export default class AuthForm extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.handSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(e) {
@@ -31,7 +31,7 @@ export default class AuthForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        let {username, email, password} = this.state;
+        let {username, email, password} = this.state
         this.props.onComplete({username, email, password})
             .then(() => this.setState({username: '', email: '', password: ''}))
             .then(() => this.props.redirect('/content'))
