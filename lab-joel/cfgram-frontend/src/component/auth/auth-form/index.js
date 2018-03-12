@@ -30,6 +30,7 @@ export default class AuthForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props);
     let {username, email, password} = this.state;
     this.props.onComplete({ username, email, password })
       .then(() => this.setState({ username: '', email: '', password: '' }))

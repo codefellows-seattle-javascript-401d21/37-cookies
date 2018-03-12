@@ -23,7 +23,7 @@ Photo.validateRequest = function(req){
   if(req.files.length > 1) {
     let err = createError(400, 'VALIDATION ERROR: must have one file');
     return util.removeMulterFiles(req.files)
-      .then(() => {throw err})
+      .then(() => {throw err});
   }
 
   let [file] = req.files;
