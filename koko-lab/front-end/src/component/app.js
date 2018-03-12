@@ -19,7 +19,6 @@ export default class App extends React.Component {
           <BrowserRouter>
             <React.Fragment>
               <Route exact path="/welcome/:auth" component={Landing}/>
-              {/* {console.log(token)} */}
               <Route exact path="/dashboard" component={() =>
                 token
                   ? <Dashboard token={token}/>
