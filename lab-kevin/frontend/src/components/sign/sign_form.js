@@ -37,13 +37,17 @@ export default class SignForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     let {username, email, password} = this.state;
-    this.props.onComplete({username, email, password})
-      .then(token => {
+    this.props.onComplete.login({username, email, password})
+      .then(action => {
+        let token = action.payload; 
         Object.keys(this.state).forEach(prop => this.setState({[prop]: ''}));
         if(!token) return;
-        localStorage.token = token.toString();
-        return this.setState({token: true}); 
+        return this.props.onComplete.getProfile(token);
       })
+      .then(() => {
+        if(this.props.sign === 'signin') this.props.onComplete.getUserPhotos();
+      })
+      .then(() => this.setState({token: true}))
       .catch(err => this.setState({err}));
   }
 
@@ -51,7 +55,7 @@ export default class SignForm extends React.Component{
     return (
 
       <React.Fragment>
-        {this.state.token ? <Redirect to='/' /> : undefined}
+        {this.state.token ? <Redirect to='/dashboard' /> : undefined}
     
         <form onSubmit={this.handleSubmit} noValidate>
           <input name="username" 
