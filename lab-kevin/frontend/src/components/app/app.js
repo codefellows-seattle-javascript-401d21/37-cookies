@@ -12,13 +12,14 @@ export default class App extends React.Component{
 
   }
 
-  onCompnenDidlMount(){
+  onComponentDidMount(){
     console.log('localstorage', localStorage.token);
     if(localStorage.token) store.dispatch(tokenSet(localStorage.token));
   }
   
   render(){
     let {token} = store.getState();
+    console.log('app token', token);
     return (
       <React.Fragment>
         <header>
